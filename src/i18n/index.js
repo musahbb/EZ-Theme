@@ -38,11 +38,7 @@ const getBrowserLanguage = () => {
 
   if (browserLang === 'zh-CN') return 'zh-CN';
 
-  
-
   if (browserLang.startsWith('zh')) return 'zh-CN';
-
-  
 
   return 'en-US';
 
