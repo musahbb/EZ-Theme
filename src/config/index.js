@@ -29,9 +29,7 @@ export const config  = {
         // 支持字符串形式(单个API地址)或数组形式(多个备选API地址)
         // 多个地址时，会按顺序检测可用性，并使用第一个可用的地址
         staticBaseUrl: [
-            'https://w5x8mu2a9943r.ezdemo.xyz/api/v1',
-            'https://skhsn6q4pnv95.ezdemo.xyz/api/v1',
-            'https://gy1v06omopzc8.ezdemo.xyz/api/v1'
+            'https://www.demo.com/api/v1'
         ],
       
         // 自动获取模式配置 (urlMode = 'auto'时使用)
@@ -77,13 +75,7 @@ export const config  = {
         // Landing页面多语言标语
         landingText: {
             'zh-CN': '探索全球网络无限可能',
-            'vi-VN': 'Khám phá khả năng vô hạn của mạng toàn cầu',
-            'en-US': 'Explore Unlimited Possibilities of Global Network',
-            'zh-TW': '探索全球網絡無限可能',
-            'ja-JP': 'グローバルネットワークの無限の可能性',
-            'ko-KR': '글로벌 네트워크의 무한한 가능성을 탐색하세요',
-            'ru-RU': 'Исследуйте безграничные возможности глобальной сети',
-            'fa-IR': 'امکانات نامحدود شبکه جهانی را کاوش کنید'
+            'en-US': 'Explore Unlimited Possibilities of Global Network'
         },
 
         // 自定义landing页面路径（相对于public目录
@@ -127,10 +119,10 @@ export const config  = {
             enabled: false,
 
             // 弹窗标题
-            title: "用户须知 (可自定义开启)",
+            title: "须知 ",
 
             // 弹窗内容 (支持HTML)
-            content: "<p><strong>欢迎使用我们的服务！</strong></p><p>请注意以下事项：</p><ul><li>请妥善保管您的账号信息</li><li>如有问题请联系客服</li></ul>",
+            content: "欢迎",
 
             // 冷却时间（小时），在此时间内不会再次显示弹窗
             cooldownHours: 0,
@@ -150,7 +142,7 @@ export const config  = {
             // 左侧区域内容配置
             leftContent: {
                 // 左侧背景图片URL或路径 (如不设置则不设置图片背景)
-                backgroundImage: 'https://www.loliapi.com/acg',
+                backgroundImage: '/images/background.jpg',
 
                 // 左上角网站名称配置
                 siteName: {
@@ -163,7 +155,7 @@ export const config  = {
                 // 左下角问候语配置
                 greeting: {
                     // 是否显示问候语
-                    show: true,
+                    show: false,
                     // 文字颜色 (white或black)
                     color: 'white'
                 }
@@ -177,7 +169,7 @@ export const config  = {
         showHotSaleBadge: false,
 
         // 是否显示套餐特性卡片 (true=显示, false=隐藏)
-        showPlanFeatureCards: true, // 默认显示
+        showPlanFeatureCards: false, // 默认显示
 
         // 是否自动选择周期最大的标签，设为false则不会自动选择
         autoSelectMaxPeriod: false, // 默认关闭
@@ -205,13 +197,13 @@ export const config  = {
         // 商店弹窗配置
         popup: {
             // 是否启用弹窗
-            enabled: true,
+            enabled: false,
 
             // 弹窗标题
-            title: "用户须知",
+            title: "须知",
 
             // 弹窗内容 (支持HTML)
-            content: "<p><strong>常规套餐默认每月订单日重置流量，您当月未用使用完的流量，不会累积到下个月</strong></p>",
+            content: "套餐",
 
             // 冷却时间（小时），在此时间内不会再次显示弹窗
             cooldownHours: 0,
@@ -222,9 +214,9 @@ export const config  = {
     },
     ORDER_CONFIG: {
         // 下单前二次确认
-        confirmOrder: true,
+        confirmOrder: false,
         // 下单前二次确认内容
-        confirmOrderContent: "<p><strong style='color: red'>无法提供相关教程和使用说明。</strong></p><p><strong style='color: red'>不会使用请勿购买，没有退款政策</strong></p>",
+        confirmOrderContent: "没有",
 
     },
     // 仪表盘页面配置
@@ -260,7 +252,7 @@ export const config  = {
         // ===============================
 
         // 是否显示在线设备数量限制 (true=显示, false=隐藏，仅Xiao-V2board支持)
-        showOnlineDevicesLimit: true,
+        showOnlineDevicesLimit: false,
         
         // 是否显示导入订阅
         showImportSubscription: true,
@@ -276,17 +268,17 @@ export const config  = {
         showAndroid: true,
         showMacOS: true,
         showWindows: true,
-        showLinux: true,
-        showOpenWrt: true,
+        showLinux: false,
+        showOpenWrt: false,
 
         // 客户端下载链接  //可以改成文档链接直接在新标签页打开
         clientLinks: {
-            ios: 'https://apps.apple.com/app/xxx',
-            android: 'https://play.google.com/store/apps/xxx',
-            macos: 'https://github.com/xxx/releases/latest',
-            windows: 'https://github.com/xxx/releases/latest',
-            linux: 'https://github.com/xxx/releases/latest',
-            openwrt: 'https://github.com/xxx/releases/latest'
+            ios: '/#/docs',
+            android: '/#/docs',
+            macos: '/#/docs',
+            windows: '/#/docs',
+            linux: '/#/docs',
+            openwrt: '/#/docs'
         },
 
         // 订阅导入客户端显示控制 部分面板不支持SingBox导入请您注意检查
@@ -297,7 +289,7 @@ export const config  = {
         showStash: true,
         showQuantumultX: true,
         showHiddifyIOS: true,
-        showSingboxIOS: true,
+        showSingboxIOS: false,
         showLoon: true,
 
         // Android平台客户端
@@ -307,7 +299,7 @@ export const config  = {
         showSurfboard: true,
         showClashMetaAndroid: true,
         showNekobox: true,
-        showSingboxAndroid: true,
+        showSingboxAndroid: false,
         showHiddifyAndroid: true,
 
         // Windows平台客户端
@@ -315,7 +307,7 @@ export const config  = {
         showClashVergeWindows: true,
         showClashWindows: true,
         showNekoray: true,
-        showSingboxWindows: true,
+        showSingboxWindows: false,
         showHiddifyWindows: true,
 
         // MacOS平台客户端
@@ -326,7 +318,7 @@ export const config  = {
         showSurgeMac: true,
         showStashMac: true,
         showQuantumultXMac: true,
-        showSingboxMac: true,
+        showSingboxMac: false,
         showHiddifyMac: true
     },
 
@@ -335,7 +327,7 @@ export const config  = {
     // 用户中心页面配置
     PROFILE_CONFIG: {
         // 是否显示礼品卡兑换栏目 (true=显示, false=隐藏)
-        showGiftCardRedeem: false, // 只有Xiao-V2board支持礼品卡兑换
+        showGiftCardRedeem: true, // 只有Xiao-V2board支持礼品卡兑换
 
         // 是否显示最近登录设备栏目 (true=显示, false=隐藏)
         showRecentDevices: true
@@ -351,8 +343,7 @@ export const config  = {
 
     // 授权的前端域名列表 (新增)
     AUTHORIZED_DOMAINS: [
-        "test.eztheme.test",
-        "test1.eztheme.test",
+        "test.eeme.test",
     ],
 
     // 验证码配置
@@ -429,7 +420,7 @@ export const config  = {
     // 充值相关配置
     WALLET_CONFIG: {
         // 预设充值金额选项（单位：元）
-        presetAmounts: [6, 30, 68, 128, 256, 328, 648, 1280],
+        presetAmounts: [30, 68, 128, 256, 328, 658],
 
         // 默认选中的充值金额（如果设为null则不预选金额）
         defaultSelectedAmount: null,
@@ -471,8 +462,8 @@ export const config  = {
             'WeChat': true,  // 微信内置浏览器
             'Baidu': true,   // 百度浏览器
             'Sogou': true,   // 搜狗浏览器
-            'UC': false,     // UC浏览器
-            'Maxthon': false // 傲游浏览器
+            'UC': true,     // UC浏览器
+            'Maxthon': true // 傲游浏览器
         },
 
         // 推荐下载的浏览器链接
@@ -514,10 +505,10 @@ export const config  = {
         showTrafficTable: true, // 默认启用
 
         // 显示多少天的流量记录
-        daysToShow: 30, // 默认显示30天
+        daysToShow: 60, // 默认显示30天
 
         // 流量趋势图是否聚合每日流量 (如果你的节点倍率全为1倍则无需开启)
-        sumDailyTraffic: false // 默认禁用
+        sumDailyTraffic: true // 默认禁用
     },
 
     // 节点列表配置
@@ -529,13 +520,13 @@ export const config  = {
         showNodeDetails: false,
 
         // 是否允许查看节点详细信息（控制详情按钮和模态框）
-        allowViewNodeInfo: true
+        allowViewNodeInfo: false
     },
 
     // 客服系统配置
     CUSTOMER_SERVICE_CONFIG: {
         // 是否启用客服系统
-        enabled: false,
+        enabled: true,
 
         // 客服系统类型: 'crisp' 或 'other'
         // 注意：当客服类型为crisp时，系统会自动向Crisp传递用户数据
@@ -551,7 +542,7 @@ export const config  = {
         embedMode: 'embed',
 
         // 是否在未登录状态下也显示客服图标
-        showWhenNotLoggedIn: true,
+        showWhenNotLoggedIn: false,
 
         // 图标位置配置
         iconPosition: {
@@ -573,13 +564,13 @@ export const config  = {
         // 可选值: 'invite', 'docs', 'tickets', 'nodes', 'orders', 'traffic', 'wallet', 'profile'
         // 'wallet' 只有 xiao-v2board 支持 非 xiao-v2board 面板请勿设置为 wallet
         // 默认值为 'invite'
-        thirdNavItem: 'invite',
+        thirdNavItem: 'docs',
 
         // 可选：第四个导航项（插入在“更多”之前）。为空字符串或未设置则不插入
         // 可选值同上: 'invite', 'docs', 'tickets', 'nodes', 'orders', 'traffic', 'wallet', 'profile'
         // 默认值为 'docs'
         // 注意：如果第三个导航项设置为 'invite'，则第四个导航项不能设置为 'invite'
-        fourthNavItem: 'docs',
+        fourthNavItem: '',
     },
 
     // More页面自定义卡片配置
