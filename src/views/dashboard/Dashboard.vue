@@ -792,19 +792,19 @@ md.renderer.rules.link_open = function (tokens, idx, options, env, self) {
     href = token.attrs[hrefIndex][1];
   }
 
-  if (href.includes('#eztheme-btn') || href.includes('class=eztheme-btn') || href.includes('?eztheme-btn')) {
+  if (href.includes('#custom-theme-btn') || href.includes('class=custom-theme-btn') || href.includes('?custom-theme-btn')) {
     token.attrs[hrefIndex][1] = href
-        .replace('#eztheme-btn', '')
-        .replace('class=eztheme-btn', '')
-        .replace('?eztheme-btn', '');
+        .replace('#custom-theme-btn', '')
+        .replace('class=custom-theme-btn', '')
+        .replace('?custom-theme-btn', '');
 
     const classIndex = token.attrIndex('class');
     if (classIndex < 0) {
-      token.attrPush(['class', 'eztheme-btn']);
+      token.attrPush(['class', 'custom-theme-btn']);
     } else {
       const classes = token.attrs[classIndex][1];
-      if (!classes.includes('eztheme-btn')) {
-        token.attrs[classIndex][1] = classes + ' eztheme-btn';
+      if (!classes.includes('custom-theme-btn')) {
+        token.attrs[classIndex][1] = classes + ' custom-theme-btn';
       }
     }
   }
@@ -1718,7 +1718,7 @@ export default {
 
         const buttons = tempDiv.querySelectorAll('button, a');
         buttons.forEach(button => {
-          if (button.className && button.className.includes('eztheme-btn')) {
+          if (button.className && button.className.includes('custom-theme-btn')) {
             button.classList.remove('markdown-link');
             button.style.textDecoration = 'none';
             button.style.borderBottom = 'none';
@@ -1727,12 +1727,12 @@ export default {
 
           if (button.tagName.toLowerCase() === 'a') {
             const href = button.getAttribute('href');
-            if (href && (href.includes('#eztheme-btn') || href.includes('?eztheme-btn') || href.includes('class=eztheme-btn'))) {
+            if (href && (href.includes('#custom-theme-btn') || href.includes('?custom-theme-btn') || href.includes('class=custom-theme-btn'))) {
               button.href = href
-                  .replace('#eztheme-btn', '')
-                  .replace('?eztheme-btn', '')
-                  .replace('class=eztheme-btn', '');
-              button.classList.add('eztheme-btn');
+                  .replace('#custom-theme-btn', '')
+                  .replace('?custom-theme-btn', '')
+                  .replace('class=custom-theme-btn', '');
+              button.classList.add('custom-theme-btn');
               button.style.textDecoration = 'none';
               button.style.borderBottom = 'none';
               button.setAttribute('data-no-markdown-style', 'true');
@@ -3679,7 +3679,7 @@ export default {
       }
     }
 
-    :deep(a.eztheme-btn) {
+    :deep(a.custom-theme-btn) {
       display: inline-block;
       padding: 8px 16px;
       background-color: var(--theme-color);
@@ -3994,7 +3994,7 @@ export default {
 }
 
 
-.eztheme-btn {
+.custom-theme-btn {
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -4037,7 +4037,7 @@ export default {
 }
 
 
-a.eztheme-btn {
+a.custom-theme-btn {
   background-image: none !important;
   background-repeat: no-repeat !important;
   background-position: initial !important;

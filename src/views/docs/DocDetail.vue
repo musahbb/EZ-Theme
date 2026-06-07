@@ -167,15 +167,15 @@ md.renderer.rules.link_open = function(tokens, idx, options, env, self) {
 
   
 
-  if (href.includes('#eztheme-btn') || href.includes('class=eztheme-btn') || href.includes('?eztheme-btn')) {
+  if (href.includes('#custom-theme-btn') || href.includes('class=custom-theme-btn') || href.includes('?custom-theme-btn')) {
 
     token.attrs[hrefIndex][1] = href
 
-      .replace('#eztheme-btn', '')
+      .replace('#custom-theme-btn', '')
 
-      .replace('class=eztheme-btn', '')
+      .replace('class=custom-theme-btn', '')
 
-      .replace('?eztheme-btn', '');
+      .replace('?custom-theme-btn', '');
 
     
 
@@ -183,15 +183,15 @@ md.renderer.rules.link_open = function(tokens, idx, options, env, self) {
 
     if (classIndex < 0) {
 
-      token.attrPush(['class', 'eztheme-btn']);
+      token.attrPush(['class', 'custom-theme-btn']);
 
     } else {
 
       const classes = token.attrs[classIndex][1];
 
-      if (!classes.includes('eztheme-btn')) {
+      if (!classes.includes('custom-theme-btn')) {
 
-        token.attrs[classIndex][1] = classes + ' eztheme-btn';
+        token.attrs[classIndex][1] = classes + ' custom-theme-btn';
 
       }
 
@@ -422,7 +422,7 @@ const handleDocClick = (event) => {
 
       const link = target.closest('a');
 
-      if (link && !link.classList.contains('eztheme-btn')) {
+      if (link && !link.classList.contains('custom-theme-btn')) {
 
         return;
 
@@ -814,7 +814,7 @@ const renderedContent = computed(() => {
 
                   } else {
 
-                    const event = new CustomEvent('eztheme-toast', { 
+                    const event = new CustomEvent('custom-theme-toast', { 
 
                       detail: { message: '已复制到剪贴板', type: 'success' } 
 
@@ -852,7 +852,7 @@ const renderedContent = computed(() => {
 
                   } else {
 
-                    const event = new CustomEvent('eztheme-toast', { 
+                    const event = new CustomEvent('custom-theme-toast', { 
 
                       detail: { message: '已复制到剪贴板', type: 'success' } 
 
@@ -876,7 +876,7 @@ const renderedContent = computed(() => {
 
                   } else {
 
-                    const event = new CustomEvent('eztheme-toast', { 
+                    const event = new CustomEvent('custom-theme-toast', { 
 
                       detail: { message: '已复制到剪贴板', type: 'success' } 
 
@@ -914,7 +914,7 @@ const renderedContent = computed(() => {
 
                   } else {
 
-                    const event = new CustomEvent('eztheme-toast', { 
+                    const event = new CustomEvent('custom-theme-toast', { 
 
                       detail: { message: '已复制到剪贴板', type: 'success' } 
 
@@ -944,7 +944,7 @@ const renderedContent = computed(() => {
 
         
 
-        document.addEventListener('eztheme-toast', function(e) {
+        document.addEventListener('custom-theme-toast', function(e) {
 
           if (e.detail && e.detail.message) {
 
@@ -1046,9 +1046,9 @@ const renderedContent = computed(() => {
 
       buttons.forEach(button => {
 
-        if (!button.classList.contains('eztheme-btn')) {
+        if (!button.classList.contains('custom-theme-btn')) {
 
-          button.classList.add('eztheme-btn');
+          button.classList.add('custom-theme-btn');
 
         }
 
@@ -1102,7 +1102,7 @@ const renderedContent = computed(() => {
 
             link.textContent.trim().toLowerCase().includes('copy')) {
 
-          link.classList.add('eztheme-btn');
+          link.classList.add('custom-theme-btn');
 
         }
 
@@ -2003,7 +2003,7 @@ onUnmounted(() => {
 
   
 
-  :deep(a:not(.eztheme-btn)) {
+  :deep(a:not(.custom-theme-btn)) {
 
     color: rgba(var(--theme-color-rgb), 1);
 
@@ -2324,7 +2324,7 @@ onUnmounted(() => {
 
 
 
-.eztheme-btn {
+.custom-theme-btn {
 
   display: inline-flex !important;
 
@@ -2434,7 +2434,7 @@ onUnmounted(() => {
 
 
 
-a.eztheme-btn {
+a.custom-theme-btn {
 
   background-image: none !important;
 

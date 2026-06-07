@@ -463,7 +463,7 @@ html {
 }
 
 
-.eztheme-btn {
+.custom-theme-btn {
   text-decoration: none !important;
   border-bottom: none !important;
   background-image: none !important;
